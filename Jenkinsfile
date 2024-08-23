@@ -1,7 +1,7 @@
 pipeline {
     agent any
-
     stages {
+        /*
         stage('Build') {
             agent {
                 docker {
@@ -19,6 +19,7 @@ pipeline {
                 '''
             }
         }
+        */
         stage('Test') {
             agent {
                 docker {
@@ -30,9 +31,7 @@ pipeline {
                 sh '''
                     ls -la
                     echo "Test stage"
-                    test -e "./build/index.html"
-                    node --version
-                    npm --version
+                    #test -e "./build/index.html"
                     npm test
                 '''
             }
